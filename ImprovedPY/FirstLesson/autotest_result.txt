@@ -1,0 +1,1568 @@
+Не все тесты пройдены, есть ошибки :(
+
+
+Количество затраченных попыток: 1
+
+Время выполнения: 1.761916 сек
+
+Общая статистика
+Всего тестов: 4. Пройдено: 0. Не пройдено: 4.
+
+Подробную информацию по каждому тесту смотрите ниже.
+
+Тест 1
+Тест не пройден ✗
+
+Формулировка:
+
+* Итоговый код для проверки.
+
+
+import warnings
+
+warnings.filterwarnings('ignore')
+
+# Введите ваше решение ниже
+import csv
+
+
+class Student:
+    def __init__(self, name: str, subjects: str):
+        self.name = None
+        self.validator_name(name)
+        self.__subjects = dict()
+        self.__load_subjects(subjects)
+
+    # def __setattr__(self, name, value):
+    #     if name == name.upper() and name.isalpha():
+    #         self.name = value
+
+    # def __getattr__(self, name):
+    #     pass
+
+    def validator_name(self, name):
+        if name == name.title() and name.replace(' ', '').isalpha():
+            self.name = name
+        else:
+            raise ValueError('Name must contain only letters.')
+
+    def __str__(self):
+        lst_subjects = list(self.__subjects.keys())
+        f_str = f"Студент: {self.name}\nПредметы: "
+        for elem in lst_subjects:
+            if elem != lst_subjects[-1]:
+                f_str += elem + ", "
+            else:
+                f_str += elem
+        return f_str
+
+    def __load_subjects(self, subjects_file):
+        with open(subjects_file, 'r', newline='', encoding="utf-8") as f:
+            reader = csv.reader(f)
+            data = [row for row in reader]
+            dict_data = dict()
+            for elem in data[0]:
+                dict_data[elem] = {"Grade": [], "Test_score": []}
+            # self.__subjects.update(dict_data)
+            self.__subjects = dict_data
+
+    def add_grade(self, subject, grade):
+        if subject not in self.__subjects:
+            return f"Предмет {subject} не найден"
+        else:
+            self.__subjects[subject]["Grade"].append(grade)
+
+    def add_test_score(self, subject, test_score):
+        if subject not in self.__subjects:
+            return f"Предмет {subject} не найден"
+        else:
+            self.__subjects[subject]["Test_score"].append(test_score)
+
+    def get_average_test_score(self, subject):
+        return sum(item for item in self.__subjects[subject]["Test_score"]) / len(
+            self.__subjects[subject]["Test_score"])
+
+    def get_average_grade(self, ):
+        grades = []
+        for item in self.__subjects:
+            for grade in self.__subjects[item]["Grade"]:
+                grades.append(grade)
+        return sum(grades) / len(grades)
+
+#При отправке кода на Выполнение раскомментируйте строку ниже, чтобы задать значения аргументов и вызвать функцию
+
+#При отправке решения на Проверку закомментируйте эту строку обратно - система автоматически подставит разные значения аргументов и вызовет функцию для проверки
+
+# student = Student("Иван Иванов", "subjects.csv")
+
+#student.add_grade("Математика", 4)
+#student.add_test_score("Математика", 85)
+
+#student.add_grade("История", 5)
+#student.add_test_score("История", 92)
+
+#average_grade = student.get_average_grade()
+#print(f"Средний балл: {average_grade}")
+
+#average_test_score = student.get_average_test_score("Математика")
+#print(f"Средний результат по тестам по математике: {average_test_score}")
+
+#print(student)
+
+
+
+student = Student("Иван Иванов", "subjects.csv")
+
+student.add_grade("Математика", 4)
+student.add_test_score("Математика", 85)
+
+student.add_grade("История", 5)
+student.add_test_score("История", 92)
+
+average_grade = student.get_average_grade()
+print(f"Средний балл: {average_grade}")
+
+average_test_score = student.get_average_test_score("Математика")
+print(f"Средний результат по тестам по математике: {average_test_score}")
+
+print(student)
+
+
+Ожидаемый ответ:
+
+Средний балл: 4.5
+Средний результат по тестам по математике: 85.0
+Студент: Иван Иванов
+Предметы: Математика, История
+
+Ваш ответ:
+
+Средний балл: 4.5
+Средний результат по тестам по математике: 85.0
+Студент: Иван Иванов
+Предметы: Математика, Физика, История, Литература
+Тест 2
+Тест не пройден ✗
+
+Формулировка:
+
+* Итоговый код для проверки.
+
+
+import warnings
+
+warnings.filterwarnings('ignore')
+
+# Введите ваше решение ниже
+import csv
+
+
+class Student:
+    def __init__(self, name: str, subjects: str):
+        self.name = None
+        self.validator_name(name)
+        self.__subjects = dict()
+        self.__load_subjects(subjects)
+
+    # def __setattr__(self, name, value):
+    #     if name == name.upper() and name.isalpha():
+    #         self.name = value
+
+    # def __getattr__(self, name):
+    #     pass
+
+    def validator_name(self, name):
+        if name == name.title() and name.replace(' ', '').isalpha():
+            self.name = name
+        else:
+            raise ValueError('Name must contain only letters.')
+
+    def __str__(self):
+        lst_subjects = list(self.__subjects.keys())
+        f_str = f"Студент: {self.name}\nПредметы: "
+        for elem in lst_subjects:
+            if elem != lst_subjects[-1]:
+                f_str += elem + ", "
+            else:
+                f_str += elem
+        return f_str
+
+    def __load_subjects(self, subjects_file):
+        with open(subjects_file, 'r', newline='', encoding="utf-8") as f:
+            reader = csv.reader(f)
+            data = [row for row in reader]
+            dict_data = dict()
+            for elem in data[0]:
+                dict_data[elem] = {"Grade": [], "Test_score": []}
+            # self.__subjects.update(dict_data)
+            self.__subjects = dict_data
+
+    def add_grade(self, subject, grade):
+        if subject not in self.__subjects:
+            return f"Предмет {subject} не найден"
+        else:
+            self.__subjects[subject]["Grade"].append(grade)
+
+    def add_test_score(self, subject, test_score):
+        if subject not in self.__subjects:
+            return f"Предмет {subject} не найден"
+        else:
+            self.__subjects[subject]["Test_score"].append(test_score)
+
+    def get_average_test_score(self, subject):
+        return sum(item for item in self.__subjects[subject]["Test_score"]) / len(
+            self.__subjects[subject]["Test_score"])
+
+    def get_average_grade(self, ):
+        grades = []
+        for item in self.__subjects:
+            for grade in self.__subjects[item]["Grade"]:
+                grades.append(grade)
+        return sum(grades) / len(grades)
+
+#При отправке кода на Выполнение раскомментируйте строку ниже, чтобы задать значения аргументов и вызвать функцию
+
+#При отправке решения на Проверку закомментируйте эту строку обратно - система автоматически подставит разные значения аргументов и вызовет функцию для проверки
+
+# student = Student("Иван Иванов", "subjects.csv")
+
+#student.add_grade("Математика", 4)
+#student.add_test_score("Математика", 85)
+
+#student.add_grade("История", 5)
+#student.add_test_score("История", 92)
+
+#average_grade = student.get_average_grade()
+#print(f"Средний балл: {average_grade}")
+
+#average_test_score = student.get_average_test_score("Математика")
+#print(f"Средний результат по тестам по математике: {average_test_score}")
+
+#print(student)
+
+
+
+student = Student("123 Иван", "subjects.csv")
+
+
+Ожидаемый ответ:
+
+ValueError: ФИО должно состоять только из букв и начинаться с заглавной буквы
+
+Ваш ответ:
+
+ValueError: Name must contain only letters.
+Тест 3
+Тест не пройден ✗
+
+Формулировка:
+
+* Итоговый код для проверки.
+
+
+import warnings
+
+warnings.filterwarnings('ignore')
+
+# Введите ваше решение ниже
+import csv
+
+
+class Student:
+    def __init__(self, name: str, subjects: str):
+        self.name = None
+        self.validator_name(name)
+        self.__subjects = dict()
+        self.__load_subjects(subjects)
+
+    # def __setattr__(self, name, value):
+    #     if name == name.upper() and name.isalpha():
+    #         self.name = value
+
+    # def __getattr__(self, name):
+    #     pass
+
+    def validator_name(self, name):
+        if name == name.title() and name.replace(' ', '').isalpha():
+            self.name = name
+        else:
+            raise ValueError('Name must contain only letters.')
+
+    def __str__(self):
+        lst_subjects = list(self.__subjects.keys())
+        f_str = f"Студент: {self.name}\nПредметы: "
+        for elem in lst_subjects:
+            if elem != lst_subjects[-1]:
+                f_str += elem + ", "
+            else:
+                f_str += elem
+        return f_str
+
+    def __load_subjects(self, subjects_file):
+        with open(subjects_file, 'r', newline='', encoding="utf-8") as f:
+            reader = csv.reader(f)
+            data = [row for row in reader]
+            dict_data = dict()
+            for elem in data[0]:
+                dict_data[elem] = {"Grade": [], "Test_score": []}
+            # self.__subjects.update(dict_data)
+            self.__subjects = dict_data
+
+    def add_grade(self, subject, grade):
+        if subject not in self.__subjects:
+            return f"Предмет {subject} не найден"
+        else:
+            self.__subjects[subject]["Grade"].append(grade)
+
+    def add_test_score(self, subject, test_score):
+        if subject not in self.__subjects:
+            return f"Предмет {subject} не найден"
+        else:
+            self.__subjects[subject]["Test_score"].append(test_score)
+
+    def get_average_test_score(self, subject):
+        return sum(item for item in self.__subjects[subject]["Test_score"]) / len(
+            self.__subjects[subject]["Test_score"])
+
+    def get_average_grade(self, ):
+        grades = []
+        for item in self.__subjects:
+            for grade in self.__subjects[item]["Grade"]:
+                grades.append(grade)
+        return sum(grades) / len(grades)
+
+#При отправке кода на Выполнение раскомментируйте строку ниже, чтобы задать значения аргументов и вызвать функцию
+
+#При отправке решения на Проверку закомментируйте эту строку обратно - система автоматически подставит разные значения аргументов и вызовет функцию для проверки
+
+# student = Student("Иван Иванов", "subjects.csv")
+
+#student.add_grade("Математика", 4)
+#student.add_test_score("Математика", 85)
+
+#student.add_grade("История", 5)
+#student.add_test_score("История", 92)
+
+#average_grade = student.get_average_grade()
+#print(f"Средний балл: {average_grade}")
+
+#average_test_score = student.get_average_test_score("Математика")
+#print(f"Средний результат по тестам по математике: {average_test_score}")
+
+#print(student)
+
+
+
+student = Student("Петров Петр", "subjects.csv")
+
+student.add_grade("Физика", 6)
+
+
+Ожидаемый ответ:
+
+ValueError: Оценка должна быть целым числом от 2 до 5
+
+Ваш ответ:
+
+Тест 4
+Тест не пройден ✗
+
+Формулировка:
+
+* Итоговый код для проверки.
+
+
+import warnings
+
+warnings.filterwarnings('ignore')
+
+# Введите ваше решение ниже
+import csv
+
+
+class Student:
+    def __init__(self, name: str, subjects: str):
+        self.name = None
+        self.validator_name(name)
+        self.__subjects = dict()
+        self.__load_subjects(subjects)
+
+    # def __setattr__(self, name, value):
+    #     if name == name.upper() and name.isalpha():
+    #         self.name = value
+
+    # def __getattr__(self, name):
+    #     pass
+
+    def validator_name(self, name):
+        if name == name.title() and name.replace(' ', '').isalpha():
+            self.name = name
+        else:
+            raise ValueError('Name must contain only letters.')
+
+    def __str__(self):
+        lst_subjects = list(self.__subjects.keys())
+        f_str = f"Студент: {self.name}\nПредметы: "
+        for elem in lst_subjects:
+            if elem != lst_subjects[-1]:
+                f_str += elem + ", "
+            else:
+                f_str += elem
+        return f_str
+
+    def __load_subjects(self, subjects_file):
+        with open(subjects_file, 'r', newline='', encoding="utf-8") as f:
+            reader = csv.reader(f)
+            data = [row for row in reader]
+            dict_data = dict()
+            for elem in data[0]:
+                dict_data[elem] = {"Grade": [], "Test_score": []}
+            # self.__subjects.update(dict_data)
+            self.__subjects = dict_data
+
+    def add_grade(self, subject, grade):
+        if subject not in self.__subjects:
+            return f"Предмет {subject} не найден"
+        else:
+            self.__subjects[subject]["Grade"].append(grade)
+
+    def add_test_score(self, subject, test_score):
+        if subject not in self.__subjects:
+            return f"Предмет {subject} не найден"
+        else:
+            self.__subjects[subject]["Test_score"].append(test_score)
+
+    def get_average_test_score(self, subject):
+        return sum(item for item in self.__subjects[subject]["Test_score"]) / len(
+            self.__subjects[subject]["Test_score"])
+
+    def get_average_grade(self, ):
+        grades = []
+        for item in self.__subjects:
+            for grade in self.__subjects[item]["Grade"]:
+                grades.append(grade)
+        return sum(grades) / len(grades)
+
+#При отправке кода на Выполнение раскомментируйте строку ниже, чтобы задать значения аргументов и вызвать функцию
+
+#При отправке решения на Проверку закомментируйте эту строку обратно - система автоматически подставит разные значения аргументов и вызовет функцию для проверки
+
+# student = Student("Иван Иванов", "subjects.csv")
+
+#student.add_grade("Математика", 4)
+#student.add_test_score("Математика", 85)
+
+#student.add_grade("История", 5)
+#student.add_test_score("История", 92)
+
+#average_grade = student.get_average_grade()
+#print(f"Средний балл: {average_grade}")
+
+#average_test_score = student.get_average_test_score("Математика")
+#print(f"Средний результат по тестам по математике: {average_test_score}")
+
+#print(student)
+
+
+
+student = Student("Сидоров Сидор", "subjects.csv")
+
+average_history_score = student.get_average_test_score("Биология")
+
+
+Ожидаемый ответ:
+
+ValueError: Предмет Биология не найден
+
+Ваш ответ:
+
+KeyError: 'Биология'
+
+
+
+
+
+ ---------------------------------------------------
+
+Не все тесты пройдены, есть ошибки :(
+
+
+Количество затраченных попыток: 1
+
+Время выполнения: 0.807795 сек
+
+Общая статистика
+Всего тестов: 4. Пройдено: 0. Не пройдено: 4.
+
+Подробную информацию по каждому тесту смотрите ниже.
+
+Тест 1
+Тест не пройден ✗
+
+Формулировка:
+
+* Итоговый код для проверки.
+
+
+import warnings
+
+warnings.filterwarnings('ignore')
+
+# Введите ваше решение ниже
+
+class Rectangle:
+    """
+    Класс, представляющий прямоугольник.
+
+    Атрибуты:
+    - width (int): ширина прямоугольника
+    - height (int): высота прямоугольника
+
+    Методы:
+    - perimeter(): вычисляет периметр прямоугольника
+    - area(): вычисляет площадь прямоугольника
+    - __add__(other): определяет операцию сложения двух прямоугольников
+    - __sub__(other): определяет операцию вычитания одного прямоугольника из другого
+    - __lt__(other): определяет операцию "меньше" для двух прямоугольников
+    - __eq__(other): определяет операцию "равно" для двух прямоугольников
+    - __le__(other): определяет операцию "меньше или равно" для двух прямоугольников
+    - __str__(): возвращает строковое представление прямоугольника
+    - __repr__(): возвращает строковое представление прямоугольника, которое может быть использовано для создания нового объекта
+    """
+
+    def __init__(self, width, height=None):
+        self.width = width
+        if height is None:
+            self.height = width
+        else:
+            self.height = height
+
+    def perimeter(self):
+        """
+        Вычисляет периметр прямоугольника.
+
+        Возвращает:
+        - int: периметр прямоугольника
+        """
+        return 2 * (self.width + self.height)
+
+    def area(self):
+        """
+        Вычисляет площадь прямоугольника.
+
+        Возвращает:
+        - int: площадь прямоугольника
+        """
+        return self.width * self.height
+
+    def __add__(self, other):
+        """
+        Определяет операцию сложения двух прямоугольников.
+
+        Аргументы:
+        - other (Rectangle): второй прямоугольник
+
+        Возвращает:
+        - Rectangle: новый прямоугольник, полученный путем сложения двух исходных прямоугольников
+        """
+        width = self.width + other.width
+        perimeter = self.perimeter() + other.perimeter()
+        height = perimeter // 2 - width
+        return Rectangle(width, height)
+
+    def __sub__(self, other):
+        """
+        Определяет операцию вычитания одного прямоугольника из другого.
+
+        Аргументы:
+        - other (Rectangle): вычитаемый прямоугольник
+
+        Возвращает:
+        - Rectangle: новый прямоугольник, полученный путем вычитания вычитаемого прямоугольника из исходного
+        """
+        if self.perimeter() < other.perimeter():
+            self, other = other, self
+        width = abs(self.width - other.width)
+        perimeter = self.perimeter() - other.perimeter()
+        height = perimeter // 2 - width
+        return Rectangle(width, height)
+
+    def __lt__(self, other):
+        """
+        Определяет операцию "меньше" для двух прямоугольников.
+
+        Аргументы:
+        - other (Rectangle): второй прямоугольник
+
+        Возвращает:
+        - bool: True, если площадь первого прямоугольника меньше площади второго, иначе False
+        """
+        return self.area() < other.area()
+
+    def __eq__(self, other):
+        """
+        Определяет операцию "равно" для двух прямоугольников.
+
+        Аргументы:
+        - other (Rectangle): второй прямоугольник
+
+        Возвращает:
+        - bool: True, если площади равны, иначе False
+        """
+        return self.area() == other.area()
+
+    def __le__(self, other):
+        """
+        Определяет операцию "меньше или равно" для двух прямоугольников.
+
+        Аргументы:
+        - other (Rectangle): второй прямоугольник
+
+        Возвращает:
+        - bool: True, если площадь первого прямоугольника меньше или равна площади второго, иначе False
+        """
+        return self.area() <= other.area()
+
+    def __str__(self):
+        """
+        Возвращает строковое представление прямоугольника.
+
+        Возвращает:
+        - str: строковое представление прямоугольника
+        """
+        return f"Прямоугольник со сторонами {self.width} и {self.height}"
+
+    def __repr__(self):
+        """
+        Возвращает строковое представление прямоугольника, которое может быть использовано для создания нового объекта.
+
+        Возвращает:
+        - str: строковое представление прямоугольника
+        """
+        return f"Rectangle({self.width}, {self.height})"
+
+
+r = Rectangle(-2)
+
+
+Ожидаемый ответ:
+
+__main__.NegativeValueError: Ширина должна быть положительной, а не -2
+
+Ваш ответ:
+
+Тест 2
+Тест не пройден ✗
+
+Формулировка:
+
+* Итоговый код для проверки.
+
+
+import warnings
+
+warnings.filterwarnings('ignore')
+
+# Введите ваше решение ниже
+
+class Rectangle:
+    """
+    Класс, представляющий прямоугольник.
+
+    Атрибуты:
+    - width (int): ширина прямоугольника
+    - height (int): высота прямоугольника
+
+    Методы:
+    - perimeter(): вычисляет периметр прямоугольника
+    - area(): вычисляет площадь прямоугольника
+    - __add__(other): определяет операцию сложения двух прямоугольников
+    - __sub__(other): определяет операцию вычитания одного прямоугольника из другого
+    - __lt__(other): определяет операцию "меньше" для двух прямоугольников
+    - __eq__(other): определяет операцию "равно" для двух прямоугольников
+    - __le__(other): определяет операцию "меньше или равно" для двух прямоугольников
+    - __str__(): возвращает строковое представление прямоугольника
+    - __repr__(): возвращает строковое представление прямоугольника, которое может быть использовано для создания нового объекта
+    """
+
+    def __init__(self, width, height=None):
+        self.width = width
+        if height is None:
+            self.height = width
+        else:
+            self.height = height
+
+    def perimeter(self):
+        """
+        Вычисляет периметр прямоугольника.
+
+        Возвращает:
+        - int: периметр прямоугольника
+        """
+        return 2 * (self.width + self.height)
+
+    def area(self):
+        """
+        Вычисляет площадь прямоугольника.
+
+        Возвращает:
+        - int: площадь прямоугольника
+        """
+        return self.width * self.height
+
+    def __add__(self, other):
+        """
+        Определяет операцию сложения двух прямоугольников.
+
+        Аргументы:
+        - other (Rectangle): второй прямоугольник
+
+        Возвращает:
+        - Rectangle: новый прямоугольник, полученный путем сложения двух исходных прямоугольников
+        """
+        width = self.width + other.width
+        perimeter = self.perimeter() + other.perimeter()
+        height = perimeter // 2 - width
+        return Rectangle(width, height)
+
+    def __sub__(self, other):
+        """
+        Определяет операцию вычитания одного прямоугольника из другого.
+
+        Аргументы:
+        - other (Rectangle): вычитаемый прямоугольник
+
+        Возвращает:
+        - Rectangle: новый прямоугольник, полученный путем вычитания вычитаемого прямоугольника из исходного
+        """
+        if self.perimeter() < other.perimeter():
+            self, other = other, self
+        width = abs(self.width - other.width)
+        perimeter = self.perimeter() - other.perimeter()
+        height = perimeter // 2 - width
+        return Rectangle(width, height)
+
+    def __lt__(self, other):
+        """
+        Определяет операцию "меньше" для двух прямоугольников.
+
+        Аргументы:
+        - other (Rectangle): второй прямоугольник
+
+        Возвращает:
+        - bool: True, если площадь первого прямоугольника меньше площади второго, иначе False
+        """
+        return self.area() < other.area()
+
+    def __eq__(self, other):
+        """
+        Определяет операцию "равно" для двух прямоугольников.
+
+        Аргументы:
+        - other (Rectangle): второй прямоугольник
+
+        Возвращает:
+        - bool: True, если площади равны, иначе False
+        """
+        return self.area() == other.area()
+
+    def __le__(self, other):
+        """
+        Определяет операцию "меньше или равно" для двух прямоугольников.
+
+        Аргументы:
+        - other (Rectangle): второй прямоугольник
+
+        Возвращает:
+        - bool: True, если площадь первого прямоугольника меньше или равна площади второго, иначе False
+        """
+        return self.area() <= other.area()
+
+    def __str__(self):
+        """
+        Возвращает строковое представление прямоугольника.
+
+        Возвращает:
+        - str: строковое представление прямоугольника
+        """
+        return f"Прямоугольник со сторонами {self.width} и {self.height}"
+
+    def __repr__(self):
+        """
+        Возвращает строковое представление прямоугольника, которое может быть использовано для создания нового объекта.
+
+        Возвращает:
+        - str: строковое представление прямоугольника
+        """
+        return f"Rectangle({self.width}, {self.height})"
+
+
+r = Rectangle(5, -3)
+
+
+Ожидаемый ответ:
+
+__main__.NegativeValueError: Высота должна быть положительной, а не -3
+
+Ваш ответ:
+
+Тест 3
+Тест не пройден ✗
+
+Формулировка:
+
+* Итоговый код для проверки.
+
+
+import warnings
+
+warnings.filterwarnings('ignore')
+
+# Введите ваше решение ниже
+
+class Rectangle:
+    """
+    Класс, представляющий прямоугольник.
+
+    Атрибуты:
+    - width (int): ширина прямоугольника
+    - height (int): высота прямоугольника
+
+    Методы:
+    - perimeter(): вычисляет периметр прямоугольника
+    - area(): вычисляет площадь прямоугольника
+    - __add__(other): определяет операцию сложения двух прямоугольников
+    - __sub__(other): определяет операцию вычитания одного прямоугольника из другого
+    - __lt__(other): определяет операцию "меньше" для двух прямоугольников
+    - __eq__(other): определяет операцию "равно" для двух прямоугольников
+    - __le__(other): определяет операцию "меньше или равно" для двух прямоугольников
+    - __str__(): возвращает строковое представление прямоугольника
+    - __repr__(): возвращает строковое представление прямоугольника, которое может быть использовано для создания нового объекта
+    """
+
+    def __init__(self, width, height=None):
+        self.width = width
+        if height is None:
+            self.height = width
+        else:
+            self.height = height
+
+    def perimeter(self):
+        """
+        Вычисляет периметр прямоугольника.
+
+        Возвращает:
+        - int: периметр прямоугольника
+        """
+        return 2 * (self.width + self.height)
+
+    def area(self):
+        """
+        Вычисляет площадь прямоугольника.
+
+        Возвращает:
+        - int: площадь прямоугольника
+        """
+        return self.width * self.height
+
+    def __add__(self, other):
+        """
+        Определяет операцию сложения двух прямоугольников.
+
+        Аргументы:
+        - other (Rectangle): второй прямоугольник
+
+        Возвращает:
+        - Rectangle: новый прямоугольник, полученный путем сложения двух исходных прямоугольников
+        """
+        width = self.width + other.width
+        perimeter = self.perimeter() + other.perimeter()
+        height = perimeter // 2 - width
+        return Rectangle(width, height)
+
+    def __sub__(self, other):
+        """
+        Определяет операцию вычитания одного прямоугольника из другого.
+
+        Аргументы:
+        - other (Rectangle): вычитаемый прямоугольник
+
+        Возвращает:
+        - Rectangle: новый прямоугольник, полученный путем вычитания вычитаемого прямоугольника из исходного
+        """
+        if self.perimeter() < other.perimeter():
+            self, other = other, self
+        width = abs(self.width - other.width)
+        perimeter = self.perimeter() - other.perimeter()
+        height = perimeter // 2 - width
+        return Rectangle(width, height)
+
+    def __lt__(self, other):
+        """
+        Определяет операцию "меньше" для двух прямоугольников.
+
+        Аргументы:
+        - other (Rectangle): второй прямоугольник
+
+        Возвращает:
+        - bool: True, если площадь первого прямоугольника меньше площади второго, иначе False
+        """
+        return self.area() < other.area()
+
+    def __eq__(self, other):
+        """
+        Определяет операцию "равно" для двух прямоугольников.
+
+        Аргументы:
+        - other (Rectangle): второй прямоугольник
+
+        Возвращает:
+        - bool: True, если площади равны, иначе False
+        """
+        return self.area() == other.area()
+
+    def __le__(self, other):
+        """
+        Определяет операцию "меньше или равно" для двух прямоугольников.
+
+        Аргументы:
+        - other (Rectangle): второй прямоугольник
+
+        Возвращает:
+        - bool: True, если площадь первого прямоугольника меньше или равна площади второго, иначе False
+        """
+        return self.area() <= other.area()
+
+    def __str__(self):
+        """
+        Возвращает строковое представление прямоугольника.
+
+        Возвращает:
+        - str: строковое представление прямоугольника
+        """
+        return f"Прямоугольник со сторонами {self.width} и {self.height}"
+
+    def __repr__(self):
+        """
+        Возвращает строковое представление прямоугольника, которое может быть использовано для создания нового объекта.
+
+        Возвращает:
+        - str: строковое представление прямоугольника
+        """
+        return f"Rectangle({self.width}, {self.height})"
+
+
+r = Rectangle(4, 4)
+r.width = -3
+
+
+Ожидаемый ответ:
+
+__main__.NegativeValueError: Ширина должна быть положительной, а не -3
+
+Ваш ответ:
+
+Тест 4
+Тест не пройден ✗
+
+Формулировка:
+
+* Итоговый код для проверки.
+
+
+import warnings
+
+warnings.filterwarnings('ignore')
+
+# Введите ваше решение ниже
+
+class Rectangle:
+    """
+    Класс, представляющий прямоугольник.
+
+    Атрибуты:
+    - width (int): ширина прямоугольника
+    - height (int): высота прямоугольника
+
+    Методы:
+    - perimeter(): вычисляет периметр прямоугольника
+    - area(): вычисляет площадь прямоугольника
+    - __add__(other): определяет операцию сложения двух прямоугольников
+    - __sub__(other): определяет операцию вычитания одного прямоугольника из другого
+    - __lt__(other): определяет операцию "меньше" для двух прямоугольников
+    - __eq__(other): определяет операцию "равно" для двух прямоугольников
+    - __le__(other): определяет операцию "меньше или равно" для двух прямоугольников
+    - __str__(): возвращает строковое представление прямоугольника
+    - __repr__(): возвращает строковое представление прямоугольника, которое может быть использовано для создания нового объекта
+    """
+
+    def __init__(self, width, height=None):
+        self.width = width
+        if height is None:
+            self.height = width
+        else:
+            self.height = height
+
+    def perimeter(self):
+        """
+        Вычисляет периметр прямоугольника.
+
+        Возвращает:
+        - int: периметр прямоугольника
+        """
+        return 2 * (self.width + self.height)
+
+    def area(self):
+        """
+        Вычисляет площадь прямоугольника.
+
+        Возвращает:
+        - int: площадь прямоугольника
+        """
+        return self.width * self.height
+
+    def __add__(self, other):
+        """
+        Определяет операцию сложения двух прямоугольников.
+
+        Аргументы:
+        - other (Rectangle): второй прямоугольник
+
+        Возвращает:
+        - Rectangle: новый прямоугольник, полученный путем сложения двух исходных прямоугольников
+        """
+        width = self.width + other.width
+        perimeter = self.perimeter() + other.perimeter()
+        height = perimeter // 2 - width
+        return Rectangle(width, height)
+
+    def __sub__(self, other):
+        """
+        Определяет операцию вычитания одного прямоугольника из другого.
+
+        Аргументы:
+        - other (Rectangle): вычитаемый прямоугольник
+
+        Возвращает:
+        - Rectangle: новый прямоугольник, полученный путем вычитания вычитаемого прямоугольника из исходного
+        """
+        if self.perimeter() < other.perimeter():
+            self, other = other, self
+        width = abs(self.width - other.width)
+        perimeter = self.perimeter() - other.perimeter()
+        height = perimeter // 2 - width
+        return Rectangle(width, height)
+
+    def __lt__(self, other):
+        """
+        Определяет операцию "меньше" для двух прямоугольников.
+
+        Аргументы:
+        - other (Rectangle): второй прямоугольник
+
+        Возвращает:
+        - bool: True, если площадь первого прямоугольника меньше площади второго, иначе False
+        """
+        return self.area() < other.area()
+
+    def __eq__(self, other):
+        """
+        Определяет операцию "равно" для двух прямоугольников.
+
+        Аргументы:
+        - other (Rectangle): второй прямоугольник
+
+        Возвращает:
+        - bool: True, если площади равны, иначе False
+        """
+        return self.area() == other.area()
+
+    def __le__(self, other):
+        """
+        Определяет операцию "меньше или равно" для двух прямоугольников.
+
+        Аргументы:
+        - other (Rectangle): второй прямоугольник
+
+        Возвращает:
+        - bool: True, если площадь первого прямоугольника меньше или равна площади второго, иначе False
+        """
+        return self.area() <= other.area()
+
+    def __str__(self):
+        """
+        Возвращает строковое представление прямоугольника.
+
+        Возвращает:
+        - str: строковое представление прямоугольника
+        """
+        return f"Прямоугольник со сторонами {self.width} и {self.height}"
+
+    def __repr__(self):
+        """
+        Возвращает строковое представление прямоугольника, которое может быть использовано для создания нового объекта.
+
+        Возвращает:
+        - str: строковое представление прямоугольника
+        """
+        return f"Rectangle({self.width}, {self.height})"
+
+
+r = Rectangle(4, 4)
+r.height = -3
+
+
+Ожидаемый ответ:
+
+__main__.NegativeValueError: Высота должна быть положительной, а не -3
+
+Ваш ответ:
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Не все тесты пройдены, есть ошибки :(
+
+
+Количество затраченных попыток: 1
+
+Время выполнения: 1.046926 сек
+
+Общая статистика
+Всего тестов: 3. Пройдено: 0. Не пройдено: 3.
+
+Подробную информацию по каждому тесту смотрите ниже.
+
+Тест 1
+Тест не пройден ✗
+
+Формулировка:
+
+* Итоговый код для проверки.
+
+
+import warnings
+
+warnings.filterwarnings('ignore')
+
+from typing import Union
+
+
+class Archive:
+    """
+    Класс, представляющий архив текстовых и числовых записей.
+
+    Атрибуты:
+    - archive_text (list): список архивированных текстовых записей.
+    - archive_number (list): список архивированных числовых записей.
+    - text (str): текущая текстовая запись для добавления в архив.
+    - number (int или float): текущая числовая запись для добавления в архив.
+    """
+
+    _instance = None
+
+    def __new__(cls, *args, **kwargs):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+            cls._instance.archive_text = []
+            cls._instance.archive_number = []
+        else:
+            cls._instance.archive_text.append(cls._instance.text)
+            cls._instance.archive_number.append(cls._instance.number)
+        return cls._instance
+
+    def __init__(self, text: str, number: Union[int, float]):
+        if not isinstance(text, str):
+            raise InvalidTextError(text)
+        else:
+            self.text = text
+        if not isinstance(number, Union[int, float]):
+            raise InvalidNumberError(number)
+        else:
+            self.number = number
+
+    def __str__(self):
+        return f'Text is {self.text} and number is {self.number}. Also {self.archive_text} and {self.archive_number}'
+
+    def __repr__(self):
+        return f'Archive("{self.text}", {self.number})'
+
+
+# Введите ваше решение ниже
+class InvalidTextError(Exception):
+    def __init__(self, value):
+        self.value = value
+
+    def __str__(self):
+        return f"Invalid text: {self.value}. Text should be a non-empty string."
+
+
+class InvalidNumberError(Exception):
+    def __init__(self, value):
+        self.value = value
+
+    def __str__(self):
+        return f"Invalid number: {self.value}. Number should be a positive integer or float."
+
+
+archive_instance = Archive("Sample text", 42.5)
+print(archive_instance)
+
+
+Ожидаемый ответ:
+
+Text is Sample text and number is 42.5. Also [] and []
+
+Ошибка:
+
+Traceback (most recent call last):
+  File "YG2YJECVNWZQ5RV3299I.py", line 67, in <module>
+    archive_instance = Archive("Sample text", 42.5)
+  File "YG2YJECVNWZQ5RV3299I.py", line 38, in __init__
+    if not isinstance(number, Union[int, float]):
+  File "/usr/local/lib/python3.8/typing.py", line 769, in __instancecheck__
+    return self.__subclasscheck__(type(obj))
+  File "/usr/local/lib/python3.8/typing.py", line 777, in __subclasscheck__
+    raise TypeError("Subscripted generics cannot be used with"
+TypeError: Subscripted generics cannot be used with class and instance checks
+Тест 2
+Тест не пройден ✗
+
+Формулировка:
+
+* Итоговый код для проверки.
+
+
+import warnings
+
+warnings.filterwarnings('ignore')
+
+from typing import Union
+
+
+class Archive:
+    """
+    Класс, представляющий архив текстовых и числовых записей.
+
+    Атрибуты:
+    - archive_text (list): список архивированных текстовых записей.
+    - archive_number (list): список архивированных числовых записей.
+    - text (str): текущая текстовая запись для добавления в архив.
+    - number (int или float): текущая числовая запись для добавления в архив.
+    """
+
+    _instance = None
+
+    def __new__(cls, *args, **kwargs):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+            cls._instance.archive_text = []
+            cls._instance.archive_number = []
+        else:
+            cls._instance.archive_text.append(cls._instance.text)
+            cls._instance.archive_number.append(cls._instance.number)
+        return cls._instance
+
+    def __init__(self, text: str, number: Union[int, float]):
+        if not isinstance(text, str):
+            raise InvalidTextError(text)
+        else:
+            self.text = text
+        if not isinstance(number, Union[int, float]):
+            raise InvalidNumberError(number)
+        else:
+            self.number = number
+
+    def __str__(self):
+        return f'Text is {self.text} and number is {self.number}. Also {self.archive_text} and {self.archive_number}'
+
+    def __repr__(self):
+        return f'Archive("{self.text}", {self.number})'
+
+
+# Введите ваше решение ниже
+class InvalidTextError(Exception):
+    def __init__(self, value):
+        self.value = value
+
+    def __str__(self):
+        return f"Invalid text: {self.value}. Text should be a non-empty string."
+
+
+class InvalidNumberError(Exception):
+    def __init__(self, value):
+        self.value = value
+
+    def __str__(self):
+        return f"Invalid number: {self.value}. Number should be a positive integer or float."
+
+
+invalid_archive_instance = Archive("", -5)
+print(invalid_archive_instance)
+
+
+Ожидаемый ответ:
+
+__main__.InvalidTextError: Invalid text: . Text should be a non-empty string.
+
+Ваш ответ:
+
+TypeError: Subscripted generics cannot be used with class and instance checks
+Тест 3
+Тест не пройден ✗
+
+Формулировка:
+
+* Итоговый код для проверки.
+
+
+import warnings
+
+warnings.filterwarnings('ignore')
+
+from typing import Union
+
+
+class Archive:
+    """
+    Класс, представляющий архив текстовых и числовых записей.
+
+    Атрибуты:
+    - archive_text (list): список архивированных текстовых записей.
+    - archive_number (list): список архивированных числовых записей.
+    - text (str): текущая текстовая запись для добавления в архив.
+    - number (int или float): текущая числовая запись для добавления в архив.
+    """
+
+    _instance = None
+
+    def __new__(cls, *args, **kwargs):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+            cls._instance.archive_text = []
+            cls._instance.archive_number = []
+        else:
+            cls._instance.archive_text.append(cls._instance.text)
+            cls._instance.archive_number.append(cls._instance.number)
+        return cls._instance
+
+    def __init__(self, text: str, number: Union[int, float]):
+        if not isinstance(text, str):
+            raise InvalidTextError(text)
+        else:
+            self.text = text
+        if not isinstance(number, Union[int, float]):
+            raise InvalidNumberError(number)
+        else:
+            self.number = number
+
+    def __str__(self):
+        return f'Text is {self.text} and number is {self.number}. Also {self.archive_text} and {self.archive_number}'
+
+    def __repr__(self):
+        return f'Archive("{self.text}", {self.number})'
+
+
+# Введите ваше решение ниже
+class InvalidTextError(Exception):
+    def __init__(self, value):
+        self.value = value
+
+    def __str__(self):
+        return f"Invalid text: {self.value}. Text should be a non-empty string."
+
+
+class InvalidNumberError(Exception):
+    def __init__(self, value):
+        self.value = value
+
+    def __str__(self):
+        return f"Invalid number: {self.value}. Number should be a positive integer or float."
+
+
+invalid_archive_instance = Archive("Sample text", -5)
+print(invalid_archive_instance)
+
+
+Ожидаемый ответ:
+
+__main__.InvalidNumberError: Invalid number: -5. Number should be a positive integer or float.
+
+Ваш ответ:
+
+TypeError: Subscripted generics cannot be used with class and instance checks
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Не все тесты пройдены, есть ошибки :(
+
+
+Количество затраченных попыток: 1
+
+Время выполнения: 0.919146 сек
+
+Общая статистика
+Всего тестов: 4. Пройдено: 0. Не пройдено: 4.
+
+Подробную информацию по каждому тесту смотрите ниже.
+
+Тест 1
+Тест не пройден ✗
+
+Формулировка:
+
+* Итоговый код для проверки.
+
+
+import warnings
+
+warnings.filterwarnings('ignore')
+
+# Введите ваше решение ниже
+
+
+
+
+
+#При отправке кода на Выполнение раскомментируйте строку ниже, чтобы задать значения аргументов и вызвать функцию
+
+#При отправке решения на Проверку закомментируйте эту строку обратно - система автоматически подставит разные значения аргументов и вызовет функцию для проверки
+
+#person = Person("", "John", "Doe", 30)
+#print(person)
+
+
+person = Person("", "John", "Doe", 30)
+
+
+
+
+print()
+
+
+Ожидаемый ответ:
+
+__main__.InvalidNameError: Invalid name: . Name should be a non-empty string.
+
+Ваш ответ:
+
+NameError: name 'Person' is not defined
+Тест 2
+Тест не пройден ✗
+
+Формулировка:
+
+* Итоговый код для проверки.
+
+
+import warnings
+
+warnings.filterwarnings('ignore')
+
+# Введите ваше решение ниже
+
+
+
+
+
+#При отправке кода на Выполнение раскомментируйте строку ниже, чтобы задать значения аргументов и вызвать функцию
+
+#При отправке решения на Проверку закомментируйте эту строку обратно - система автоматически подставит разные значения аргументов и вызовет функцию для проверки
+
+#person = Person("", "John", "Doe", 30)
+#print(person)
+
+
+person = Person("Alice", "Smith", "Johnson", -5)
+
+
+
+
+print()
+
+
+Ожидаемый ответ:
+
+__main__.InvalidAgeError: Invalid age: -5. Age should be a positive integer.
+
+Ваш ответ:
+
+NameError: name 'Person' is not defined
+Тест 3
+Тест не пройден ✗
+
+Формулировка:
+
+* Итоговый код для проверки.
+
+
+import warnings
+
+warnings.filterwarnings('ignore')
+
+# Введите ваше решение ниже
+
+
+
+
+
+#При отправке кода на Выполнение раскомментируйте строку ниже, чтобы задать значения аргументов и вызвать функцию
+
+#При отправке решения на Проверку закомментируйте эту строку обратно - система автоматически подставит разные значения аргументов и вызовет функцию для проверки
+
+#person = Person("", "John", "Doe", 30)
+#print(person)
+
+
+employee = Employee("Bob", "Johnson", "Brown", 40, 12345)
+
+
+
+
+print()
+
+
+Ожидаемый ответ:
+
+__main__.InvalidIdError: Invalid id: 12345. Id should be a 6-digit positive integer between 100000 and 999999.
+
+Ваш ответ:
+
+NameError: name 'Employee' is not defined
+Тест 4
+Тест не пройден ✗
+
+Формулировка:
+
+* Итоговый код для проверки.
+
+
+import warnings
+
+warnings.filterwarnings('ignore')
+
+# Введите ваше решение ниже
+
+
+
+
+
+#При отправке кода на Выполнение раскомментируйте строку ниже, чтобы задать значения аргументов и вызвать функцию
+
+#При отправке решения на Проверку закомментируйте эту строку обратно - система автоматически подставит разные значения аргументов и вызовет функцию для проверки
+
+#person = Person("", "John", "Doe", 30)
+#print(person)
+
+
+person = Person("Alice", "Smith", "Johnson", 25)
+print(person.get_age())
+
+
+Ожидаемый ответ:
+
+25
+
+Ошибка:
+
+Traceback (most recent call last):
+  File "XSOA556K2QZDI358WEN1.py", line 21, in <module>
+    person = Person("Alice", "Smith", "Johnson", 25)
+NameError: name 'Person' is not defined

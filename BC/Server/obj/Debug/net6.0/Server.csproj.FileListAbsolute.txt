@@ -1,0 +1,14 @@
+D:\Education\BC\BC12\Server\bin\Debug\net6.0\Server.exe
+D:\Education\BC\BC12\Server\bin\Debug\net6.0\Server.deps.json
+D:\Education\BC\BC12\Server\bin\Debug\net6.0\Server.runtimeconfig.json
+D:\Education\BC\BC12\Server\bin\Debug\net6.0\Server.dll
+D:\Education\BC\BC12\Server\bin\Debug\net6.0\Server.pdb
+D:\Education\BC\BC12\Server\obj\Debug\net6.0\Server.GeneratedMSBuildEditorConfig.editorconfig
+D:\Education\BC\BC12\Server\obj\Debug\net6.0\Server.AssemblyInfoInputs.cache
+D:\Education\BC\BC12\Server\obj\Debug\net6.0\Server.AssemblyInfo.cs
+D:\Education\BC\BC12\Server\obj\Debug\net6.0\Server.csproj.CoreCompileInputs.cache
+D:\Education\BC\BC12\Server\obj\Debug\net6.0\Server.dll
+D:\Education\BC\BC12\Server\obj\Debug\net6.0\refint\Server.dll
+D:\Education\BC\BC12\Server\obj\Debug\net6.0\Server.pdb
+D:\Education\BC\BC12\Server\obj\Debug\net6.0\Server.genruntimeconfig.cache
+D:\Education\BC\BC12\Server\obj\Debug\net6.0\ref\Server.dll

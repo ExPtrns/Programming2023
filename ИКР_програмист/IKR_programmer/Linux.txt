@@ -1,0 +1,61 @@
+1.Используя команду cat в терминале операционной системы Linux, создать
+два файла Домашние животные (заполнив файл собаками, кошками,
+хомяками) и Вьючные животными заполнив файл Лошадьми, верблюдами и
+ослы), а затем объединить их. Просмотреть содержимое созданного файла.
+Переименовать файл, дав ему новое имя (Друзья человека).
+
+tim@linux:~$ mkdir IKR_programmer
+tim@linux:~$ cd IKR_programmer/
+tim@linux:~/IKR_programmer$ cat > pack_animals.txt
+Horses
+Camels
+Donkeys
+tim@linux:~/IKR_programmer$ nano pets.txt
+tim@linux:~/IKR_programmer$ cat > pets.txt
+Dogs
+Cats
+Hamsters
+tim@linux:~/IKR_programmer$ cat pets.txt pack_animals.txt > human_friends.txt
+tim@linux:~/IKR_programmer$ nano human_friends.txt
+
+2. Создать директорию, переместить файл туда.
+
+tim@linux:~/IKR_programmer$ mkdir some_cat
+tim@linux:~/IKR_programmer$ mv human_friends.txt some_cat/
+tim@linux:~/IKR_programmer$ cd some_cat/
+tim@linux:~/IKR_programmer/some_cat$ ls
+human_friends.txt
+
+3. Подключить дополнительный репозиторий MySQL. Установить любой пакет
+из этого репозитория.
+4. Установить и удалить deb-пакет с помощью dpkg.
+5. Выложить историю команд в терминале ubuntu
+
+wget https://dev.mysql.com/get/mysql-apt-config_0.8.29-1_all.deb
+tim@linux:~/IKR_programmer/some_cat$ cd ~
+tim@linux:~$ cd Загрузки
+tim@linux:~/Загрузки$ ls
+'mysql-apt-config_0.8.29-1_all.deb'
+tim@linux:~/Загрузки$ sudo dpkg -i mysql-apt-config_0.8.29-1_all.deb
+tim@linux:~/Загрузки$ sudo apt-get update
+tim@linux:~/Загрузки$ sudo apt-get install mysql-server
+tim@linux:~/Загрузки$ systemctl status mysql
+● mysql.service - MySQL Community Server
+     Loaded: loaded (/lib/systemd/system/mysql.service; enabled; preset: enabled)
+     Active: active (running) since Tue 2024-04-23 10:50:32 MSK; 47s ago
+       Docs: man:mysqld(8)
+             http://dev.mysql.com/doc/refman/en/using-systemd.html
+   Main PID: 61389 (mysqld)
+     Status: "Server is operational"
+      Tasks: 38 (limit: 4613)
+     Memory: 392.1M
+        CPU: 2.040s
+     CGroup: /system.slice/mysql.service
+             └─61389 /usr/sbin/mysqld
+tim@linux:~/Загрузки$ rm mysql-apt-config_0.8.29-1_all.deb
+
+
+
+
+
+

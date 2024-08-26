@@ -1,0 +1,40 @@
+1. Установить Nginx
+sudo apt install
+sudo apt install nginx
+systemctl status nginx
+3. Установить Apache.
+sudo apt install apache2
+systemctl status apache2
+4. * Настроить обработку PHP. Добиться одновременной работы с Nginx.
+cd /etc/apache2
+sudo nano ports.conf
+->	listen 9000
+apachectl -t
+sudo nano sites-available/000-default.conf
+->	<VirtualHost *:9000>
+apachectl -t
+sudo systemctl start nginx
+sudo systemctl start apache2
+sudo ss -ntlp
+5. Настроить схему обратного прокси для Nginx (динамика - на Apache).
+cd /etc/nginx
+sudo nano sites-available/default
+location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                #try_files $uri $uri/ =404;
+                proxy_pass http://localhost:8080;
+                proxy_set_header Host $host;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Real-IP $remote_addr;
+        }
+sudo nginx -t
+sudo systemctl reload nginx
+6. Установить MySQL. Создать новую базу данных и таблицу в ней.
+sudo apt install mysql-server-8.0
+sudo mysql
+CREATE DATABASE test;
+use test;
+CREATE TABLE TESTTABLE (counter INT);
+INSERT INTO TESTTABLE (counter) VALUES (1),(2),(3);
+SELECT * FROM TESTTABLE;

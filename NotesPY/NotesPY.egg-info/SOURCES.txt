@@ -1,0 +1,11 @@
+add_note.py
+delete_notes.py
+get_notes.py
+main.py
+save_N_load_notes.py
+setup.py
+ui.py
+NotesPY.egg-info/PKG-INFO
+NotesPY.egg-info/SOURCES.txt
+NotesPY.egg-info/dependency_links.txt
+NotesPY.egg-info/top_level.txt

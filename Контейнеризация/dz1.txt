@@ -1,0 +1,52 @@
+Ubuntu установлен
+tim@linux:~$ cat /etc/*-release
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=23.10
+DISTRIB_CODENAME=mantic
+DISTRIB_DESCRIPTION="Ubuntu 23.10"
+PRETTY_NAME="Ubuntu 23.10"
+NAME="Ubuntu"
+VERSION_ID="23.10"
+VERSION="23.10 (Mantic Minotaur)"
+VERSION_CODENAME=mantic
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=mantic
+LOGO=ubuntu-logo
+
+Установка и запуск SSH:
+- sudo apt update 			- подготовка
+- sudo apt install openssh-server -y 	- установка SSH
+- systemctl status ssh 			- проверка статуса SSH
+- sudo systemctl start ssh 		- запуск SSH
+tim@linux:~$ systemctl status ssh
+● ssh.service - OpenBSD Secure Shell server
+     Loaded: loaded (/lib/systemd/system/ssh.service; enabled; preset: enabled)
+    Drop-In: /etc/systemd/system/ssh.service.d
+             └─00-socket.conf
+     Active: active (running) since Wed 2024-01-31 12:42:54 MSK; 18min ago
+TriggeredBy: ● ssh.socket
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 3931 (sshd)
+      Tasks: 1 (limit: 4613)
+     Memory: 2.5M
+        CPU: 71ms
+     CGroup: /system.slice/ssh.service
+             └─3931 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+
+янв 31 12:42:52 linux systemd[1]: Starting ssh.service - OpenBSD Secure Shell s>
+янв 31 12:42:54 linux sshd[3931]: Server listening on :: port 22.
+янв 31 12:42:54 linux systemd[1]: Started ssh.service - OpenBSD Secure Shell se>
+
+- sudo systemctl enable ssh 		- добавить запуск службы в автозагрузку
+
+tim@linux:~$ hostname -I  
+192.168.1.72 				- внешний IP-адресс
+
+- sudo apt install mc			- установка Midnight Commander
+

@@ -1,0 +1,20 @@
+Path,Type,Size
+test_folder\1.py,File,6720
+test_folder\9.py,File,1087
+test_folder\new_file_005.doc,File,0
+test_folder\new_file_006.doc,File,0
+test_folder\new_file_007.doc,File,0
+test_folder\test.doc,File,43520
+test_folder\test2.doc,File,65024
+test_folder\users.json,File,149
+test_folder\New_catalog,Directory,1384982
+test_folder\New_catalog1,Directory,22528
+test_folder\New_catalog\new_file_002.doc,File,22528
+test_folder\New_catalog\new_file_003.doc,File,0
+test_folder\New_catalog\new_file_004 — копия (2).doc,File,0
+test_folder\New_catalog\new_file_004 — копия (3).doc,File,0
+test_folder\New_catalog\new_file_004 — копия.doc,File,0
+test_folder\New_catalog\new_file_004.doc,File,0
+test_folder\New_catalog\2 level,Directory,1362454
+test_folder\New_catalog\2 level\Новый точечный рисунок.bmp,File,1362454
+test_folder\New_catalog1\new_file_005.doc,File,22528

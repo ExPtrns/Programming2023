@@ -1,0 +1,66 @@
+tim@linux:~$ apt download nginx
+tim@linux:~$ sudo dpkg -i nginx_1.24.0-1ubuntu1_amd64.deb 
+(Чтение базы данных … на данный момент установлено 184999 файлов и каталогов.)
+Подготовка к распаковке nginx_1.24.0-1ubuntu1_amd64.deb …
+Распаковывается nginx (1.24.0-1ubuntu1) на замену (1.24.0-1ubuntu1) …
+dpkg: зависимости пакетов не позволяют настроить пакет nginx:
+ nginx зависит от nginx-common (<< 1.24.0-1ubuntu1.1~), однако:
+  Пакет nginx-common не установлен.
+ nginx зависит от nginx-common (>= 1.24.0-1ubuntu1), однако:
+  Пакет nginx-common не установлен.
+
+dpkg: ошибка при обработке пакета nginx (--install):
+ проблемы зависимостей — оставляем не настроенным
+Обрабатываются триггеры для man-db (2.11.2-3) …
+При обработке следующих пакетов произошли ошибки:
+ nginx
+tim@linux:~$ apt download nginx-common
+Пол:1 http://ru.archive.ubuntu.com/ubuntu mantic/main amd64 nginx-common all 1.24.0-1ubuntu1 [44,8 kB]
+Получено 44,8 kB за 0с (206 kB/s)       
+tim@linux:~$ sudo dpkg -i nginx-common_1.24.0-1ubuntu1_all.deb 
+Выбор ранее не выбранного пакета nginx-common.
+(Чтение базы данных … на данный момент установлено 184999 файлов и каталогов.)
+Подготовка к распаковке nginx-common_1.24.0-1ubuntu1_all.deb …
+Распаковывается nginx-common (1.24.0-1ubuntu1) …
+Настраивается пакет nginx-common (1.24.0-1ubuntu1) …
+Created symlink /etc/systemd/system/multi-user.target.wants/nginx.service → /lib/systemd/system/nginx.service.
+Обрабатываются триггеры для ufw (0.36.2-1) …
+tim@linux:~$ sudo dpkg -i nginx_1.24.0-1ubuntu1_amd64.deb 
+(Чтение базы данных … на данный момент установлено 185042 файла и каталога.)
+Подготовка к распаковке nginx_1.24.0-1ubuntu1_amd64.deb …
+Распаковывается nginx (1.24.0-1ubuntu1) на замену (1.24.0-1ubuntu1) …
+Настраивается пакет nginx (1.24.0-1ubuntu1) …
+ * Upgrading binary nginx                                                [ OK ] 
+Обрабатываются триггеры для man-db (2.11.2-3) …
+im@linux:~$ sudo dpkg -P nginx
+(Чтение базы данных … на данный момент установлено 185042 файла и каталога.)
+Удаляется nginx (1.24.0-1ubuntu1) …
+Обрабатываются триггеры для man-db (2.11.2-3) …
+tim@linux:~$ snap install opera
+opera 107.0.5045.15 от Opera (opera-software✓) установлен
+tim@linux:~$ snap list
+Название                   Версия                      Правка  Канал            Издатель         Примечание
+bare                       1.0                         5       latest/stable    canonical✓       base
+chromium-ffmpeg            0.1                         37      latest/stable    canonical✓       -
+core18                     20231027                    2812    latest/stable    canonical✓       base
+core22                     20231123                    1033    latest/stable    canonical✓       base
+firefox                    122.0-2.1                   3728    latest/stable/…  mozilla✓         -
+firmware-updater           0+git.e8771be               109     latest/stable/…  canonical✓       -
+gnome-3-28-1804            3.28.0-19-g98f9e67.98f9e67  198     latest/stable    canonical✓       -
+gnome-42-2204              0+git.ff35a85               141     latest/stable/…  canonical✓       -
+gtk-common-themes          0.1-81-g442e511             1535    latest/stable/…  canonical✓       -
+opera                      107.0.5045.15               289     latest/stable    opera-software✓  -
+snap-store                 0+git.e118b05               1046    latest/stable/…  canonical✓       -
+snapd                      2.61.1                      20671   latest/stable    canonical✓       snapd
+snapd-desktop-integration  0.9                         83      latest/stable/…  canonical✓       -
+
+tim@linux:~$ nano test.txt
+tim@linux:~$ ls
+ 123                               nginx-common_1.24.0-1ubuntu1_all.deb   Видео         Музыка
+ file_copy                         snap                                   Документы     Общедоступные
+ links                             test.txt                               Загрузки     'Рабочий стол'
+ nginx_1.24.0-1ubuntu1_amd64.deb   zip_3.0-13_amd64.deb                   Изображения   Шаблоны
+tim@linux:~$ 
+tim@linux:~$ crontab -e
+	 */10 * * * * cp /home/tim/test.txt /home/tim/test.txt.bak
+crontab: installing new crontab

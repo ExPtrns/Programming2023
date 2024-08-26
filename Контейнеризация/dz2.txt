@@ -1,0 +1,222 @@
+tim@linux:~$ mkdir students
+tim@linux:~$ ls -l
+итого 44
+-rw-r--r-- 1 tim tim 1174 янв 31 12:44  123
+drwx------ 5 tim tim 4096 фев  2 00:00  snap
+drwxrwxr-x 2 tim tim 4096 фев  4 13:39  students
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Видео
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Документы
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Загрузки
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Изображения
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Музыка
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Общедоступные
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54 'Рабочий стол'
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Шаблоны
+tim@linux:~$ mkdir mentors
+tim@linux:~$ cd students/
+tim@linux:~/students$ touch students_list.txt
+tim@linux:~/students$ cd ..
+tim@linux:~$ cd mentors/
+tim@linux:~/mentors$ touch mentors_list.txt
+tim@linux:~/mentors$ vim mentors_list.txt 
+Команда «vim» не найдена, но может быть установлена с помощью:
+sudo apt install vim        # version 2:9.0.1672-1ubuntu2.1, or
+sudo apt install neovim     # version 0.7.2-7
+sudo apt install vim-gtk3   # version 2:9.0.1672-1ubuntu2.1
+sudo apt install vim-motif  # version 2:9.0.1672-1ubuntu2.1
+sudo apt install vim-nox    # version 2:9.0.1672-1ubuntu2.1
+tim@linux:~/mentors$ sudo apt install vim 
+[sudo] password for tim: 
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово         
+Будут установлены следующие дополнительные пакеты:
+  libsodium23 vim-runtime
+Предлагаемые пакеты:
+  ctags vim-doc vim-scripts
+Следующие НОВЫЕ пакеты будут установлены:
+  libsodium23 vim vim-runtime
+Обновлено 0 пакетов, установлено 3 новых пакетов, для удаления отмечено 0 пакетов, и 1 пакетов не обновлено.
+Необходимо скачать 9 136 kB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 40,8 MB.
+Хотите продолжить? [Д/н] y
+Пол:1 http://ru.archive.ubuntu.com/ubuntu mantic/main amd64 libsodium23 amd64 1.0.18-1build2 [164 kB]
+Пол:2 http://ru.archive.ubuntu.com/ubuntu mantic-updates/main amd64 vim-runtime all 2:9.0.1672-1ubuntu2.2 [7 132 kB]
+Пол:3 http://ru.archive.ubuntu.com/ubuntu mantic-updates/main amd64 vim amd64 2:9.0.1672-1ubuntu2.2 [1 841 kB]
+Получено 9 136 kB за 9с (1 018 kB/s)                                           
+Выбор ранее не выбранного пакета libsodium23:amd64.
+(Чтение базы данных … на данный момент установлено 145390 файлов и каталогов.)
+Подготовка к распаковке …/libsodium23_1.0.18-1build2_amd64.deb …
+Распаковывается libsodium23:amd64 (1.0.18-1build2) …
+Выбор ранее не выбранного пакета vim-runtime.
+Подготовка к распаковке …/vim-runtime_2%3a9.0.1672-1ubuntu2.2_all.deb …
+Добавляется «отклонение /usr/share/vim/vim90/doc/help.txt в /usr/share/vim/vim90
+/doc/help.txt.vim-tiny из-за vim-runtime»
+Добавляется «отклонение /usr/share/vim/vim90/doc/tags в /usr/share/vim/vim90/doc
+/tags.vim-tiny из-за vim-runtime»
+Распаковывается vim-runtime (2:9.0.1672-1ubuntu2.2) …
+Выбор ранее не выбранного пакета vim.
+Подготовка к распаковке …/vim_2%3a9.0.1672-1ubuntu2.2_amd64.deb …
+Распаковывается vim (2:9.0.1672-1ubuntu2.2) …
+Настраивается пакет libsodium23:amd64 (1.0.18-1build2) …
+Настраивается пакет vim-runtime (2:9.0.1672-1ubuntu2.2) …
+Настраивается пакет vim (2:9.0.1672-1ubuntu2.2) …
+update-alternatives: используется /usr/bin/vim.basic для предоставления /usr/bin
+/ex (ex) в автоматическом режиме
+update-alternatives: используется /usr/bin/vim.basic для предоставления /usr/bin
+/rview (rview) в автоматическом режиме
+update-alternatives: используется /usr/bin/vim.basic для предоставления /usr/bin
+/rvim (rvim) в автоматическом режиме
+update-alternatives: используется /usr/bin/vim.basic для предоставления /usr/bin
+/vi (vi) в автоматическом режиме
+update-alternatives: используется /usr/bin/vim.basic для предоставления /usr/bin
+/view (view) в автоматическом режиме
+update-alternatives: используется /usr/bin/vim.basic для предоставления /usr/bin
+/vim (vim) в автоматическом режиме
+update-alternatives: используется /usr/bin/vim.basic для предоставления /usr/bin
+/vimdiff (vimdiff) в автоматическом режиме
+Обрабатываются триггеры для man-db (2.11.2-3) …
+Обрабатываются триггеры для libc-bin (2.38-1ubuntu6.1) …
+tim@linux:~/mentors$ vim mentors_list.txt 
+tim@linux:~/mentors$ ll
+итого 12
+drwxrwxr-x  2 tim tim 4096 фев  4 13:51 ./
+drwxr-x--- 18 tim tim 4096 фев  4 13:51 ../
+-rw-rw-r--  1 tim tim   26 фев  4 13:51 mentors_list.txt
+tim@linux:~/mentors$ cd ..
+tim@linux:~$ cd students/
+tim@linux:~/students$ vim students_list.txt 
+tim@linux:~/students$ ll
+итого 12
+drwxrwxr-x  2 tim tim 4096 фев  4 13:52 ./
+drwxr-x--- 18 tim tim 4096 фев  4 13:52 ../
+-rw-rw-r--  1 tim tim  913 фев  4 13:52 students_list.txt
+tim@linux:~/students$ cd ..
+tim@linux:~$ cd mentors/
+tim@linux:~/mentors$ mv mentors_list.txt ../students/
+tim@linux:~/mentors$ ls -l
+итого 0
+tim@linux:~/mentors$ cd
+tim@linux:~$ cd students/
+tim@linux:~/students$ ls -l
+итого 8
+-rw-rw-r-- 1 tim tim  26 фев  4 13:51 mentors_list.txt
+-rw-rw-r-- 1 tim tim 913 фев  4 13:52 students_list.txt
+tim@linux:~/students$ rm -r ../mentors/
+tim@linux:~/students$ cd
+tim@linux:~$ ls -l
+итого 44
+-rw-r--r-- 1 tim tim 1174 янв 31 12:44  123
+drwx------ 5 tim tim 4096 фев  2 00:00  snap
+drwxrwxr-x 2 tim tim 4096 фев  4 13:59  students
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Видео
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Документы
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Загрузки
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Изображения
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Музыка
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Общедоступные
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54 'Рабочий стол'
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Шаблоны
+tim@linux:~$ mv students students_and_mentors
+tim@linux:~$ ls -l
+итого 44
+-rw-r--r-- 1 tim tim 1174 янв 31 12:44  123
+drwx------ 5 tim tim 4096 фев  2 00:00  snap
+drwxrwxr-x 2 tim tim 4096 фев  4 13:59  students_and_mentors
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Видео
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Документы
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Загрузки
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Изображения
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Музыка
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Общедоступные
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54 'Рабочий стол'
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Шаблоны
+tim@linux:~$ rm -r students_and_mentors/
+tim@linux:~$ ls -l
+итого 40
+-rw-r--r-- 1 tim tim 1174 янв 31 12:44  123
+drwx------ 5 tim tim 4096 фев  2 00:00  snap
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Видео
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Документы
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Загрузки
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Изображения
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Музыка
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Общедоступные
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54 'Рабочий стол'
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Шаблоны
+
+
+tim@linux:~$ > file1
+tim@linux:~$ vim file1
+tim@linux:~$ cp file1 file2
+tim@linux:~$ ln -s file1 file3
+tim@linux:~$ ln file1 file4
+tim@linux:~$ ls -li
+итого 52
+655519 -rw-r--r-- 1 tim tim 1174 янв 31 12:44  123
+658416 -rw-rw-r-- 2 tim tim   77 фев  4 14:12  file1
+655610 -rw-rw-r-- 1 tim tim   77 фев  4 14:14  file2
+658415 lrwxrwxrwx 1 tim tim    5 фев  4 14:14  file3 -> file1
+658416 -rw-rw-r-- 2 tim tim   77 фев  4 14:12  file4
+655368 drwx------ 5 tim tim 4096 фев  2 00:00  snap
+655450 drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Видео
+655447 drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Документы
+655444 drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Загрузки
+655449 drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Изображения
+655448 drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Музыка
+655446 drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Общедоступные
+655443 drwxr-xr-x 2 tim tim 4096 янв 29 19:54 'Рабочий стол'
+655445 drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Шаблоны
+tim@linux:~$ rm file1
+tim@linux:~$ ls -l
+итого 48
+-rw-r--r-- 1 tim tim 1174 янв 31 12:44  123
+-rw-rw-r-- 1 tim tim   77 фев  4 14:14  file2
+lrwxrwxrwx 1 tim tim    5 фев  4 14:14  file3 -> file1
+-rw-rw-r-- 1 tim tim   77 фев  4 14:12  file4
+drwx------ 5 tim tim 4096 фев  2 00:00  snap
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Видео
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Документы
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Загрузки
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Изображения
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Музыка
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Общедоступные
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54 'Рабочий стол'
+drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Шаблоны
+tim@linux:~$ less file2
+tim@linux:~$ less file3
+file3: Нет такого файла или каталога
+tim@linux:~$ less file4
+tim@linux:~$ mv file2 file_copy
+tim@linux:~$ mv file3 file_soft_link
+tim@linux:~$ mv file4 file_hard_link
+tim@linux:~$ ln -s file_copy new_soft_copy
+tim@linux:~$ ln file_copy new_hard_copy
+tim@linux:~$ ls -li
+итого 52
+655519 -rw-r--r-- 1 tim tim 1174 янв 31 12:44  123
+655610 -rw-rw-r-- 2 tim tim   77 фев  4 14:14  file_copy
+658416 -rw-rw-r-- 1 tim tim   77 фев  4 14:12  file_hard_link
+658415 lrwxrwxrwx 1 tim tim    5 фев  4 14:14  file_soft_link -> file1
+655610 -rw-rw-r-- 2 tim tim   77 фев  4 14:14  new_hard_copy
+658417 lrwxrwxrwx 1 tim tim    9 фев  4 14:22  new_soft_copy -> file_copy
+655368 drwx------ 5 tim tim 4096 фев  2 00:00  snap
+655450 drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Видео
+655447 drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Документы
+655444 drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Загрузки
+655449 drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Изображения
+655448 drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Музыка
+655446 drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Общедоступные
+655443 drwxr-xr-x 2 tim tim 4096 янв 29 19:54 'Рабочий стол'
+655445 drwxr-xr-x 2 tim tim 4096 янв 29 19:54  Шаблоны
+tim@linux:~$ mkdir links
+tim@linux:~$ mv file_hard_link links
+tim@linux:~$ mv file_soft_link links
+tim@linux:~$ mv new_hard_copy links
+tim@linux:~$ mv new_soft_copy links
+tim@linux:~$ cd links
+tim@linux:~/links$ ls -li
+итого 8
+658416 -rw-rw-r-- 1 tim tim 77 фев  4 14:12 file_hard_link
+658415 lrwxrwxrwx 1 tim tim  5 фев  4 14:14 file_soft_link -> file1
+655610 -rw-rw-r-- 2 tim tim 77 фев  4 14:14 new_hard_copy
+658417 lrwxrwxrwx 1 tim tim  9 фев  4 14:22 new_soft_copy -> file_copy

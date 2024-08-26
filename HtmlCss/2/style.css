@@ -1,0 +1,30 @@
+html{
+    background-color:whitesmoke);
+    font-family: 'Roboto', sans-serif;
+}
+a {
+    color: rgb(233, 33, 89);
+
+}
+.header, .main, .footer{
+    max-width: 1200px;
+    padding-left: 15px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-block: 3px;
+    background: rgba(5, 90, 109, 0.3);
+}
+.button {
+    cursor:pointer;
+    display:block;
+    height:40px;
+    width:300px;
+    text-align:center;
+    background-color: blueviolet;
+    color: aliceblue;
+    background-repeat:no-repeat;
+}
+.button:hover{
+    background-color: rgb(207, 122, 24);
+    color: rgb(0, 7, 12);
+}

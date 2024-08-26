@@ -1,0 +1,11 @@
+2. Установить Docker.
+sudo apt update
+sudo apt install docker.io
+docker help
+sudo docker ps -a
+3. Запустить контейнер с Ubuntu.
+sudo docker run -d ubuntu
+sudo docker ps -a
+
+
+
