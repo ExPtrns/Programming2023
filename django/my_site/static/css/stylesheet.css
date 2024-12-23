@@ -1,0 +1,151 @@
+{% load static %}
+*{
+            font-family: "Segoe UI", system-ui, sans-serif;
+            margin: 0;
+            padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: gray;
+    font-style: italic;
+}
+
+body{
+    background-color: white;
+    opacity: 0.8;
+}
+a:hover{
+    color: #050505;
+}
+
+header{
+    max-width: 1200px;
+    margin: auto;
+    padding: 10px 0 30px 0;
+}
+header > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fixed-container{
+    max-width: 1200px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main_block{
+    height: 800px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.recipes-short{
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0 ;
+}
+
+.recipes-short > a  {
+    width: 300px;
+    align-content: space-between;
+    max-height: 400px;
+    text-align: center;
+    padding: 10px 0;
+}
+.recipe-name{
+    width: 600px;
+    height: 30px;
+    padding: 0.5em 1.5em;
+    font-size: 0.9em;
+    background-color: #fff;
+    border: 2px solid #000;
+    box-shadow: 4px 4px 0 #000;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+}
+
+.no-resize{
+    resize: none;
+    width: 600px;
+    height: 200px;
+    padding: 0.5em 1.5em;
+    font-size: 0.9em;
+    background-color: #fff;
+    border: 2px solid #000;
+    box-shadow: 4px 4px 0 #000;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+}
+footer{
+    background-color: black;
+    color: #fff0f5;
+    height: 50px;
+}
+footer > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.a-foot:hover{
+    color: white;
+}
+.field-forms{
+    padding: 0.5em 1.5em;
+    font-size: 0.9em;
+    background-color: #fff;
+    border: 2px solid #000;
+    box-shadow: 4px 4px 0 #000;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+}
+
+.btn {
+    padding: 1em 1.5em;
+    font-size: 0.9em;
+    background-color: #fff;
+    border: 2px solid #000;
+    box-shadow: 4px 4px 0 #000;
+    margin-right: 1rem;
+    margin-top: 1.5rem;
+    margin-left: 0rem;
+   }
+
+label {
+    width: 500px;
+    text-align: right;
+    float: left;
+    line-height: 40px;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 0;
+}
+
+.detail-image{
+    position: absolute;
+    height: 300px;
+    left: 900px;
+    top: 200px;
+}
+.detail-recipe{
+    width: 550px;
+    background-image: none;
+}
+
+.height2x{
+    min-height: 150px;
+}
